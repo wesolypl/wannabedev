@@ -1,34 +1,51 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
+import { Link } from 'gatsby'
+import PropTypes from 'prop-types'
+import React from 'react'
+import styled from 'styled-components'
+const StyledHeader = styled.header`
+  width: 100%;
+  height: 40px;
+  font-family: ${({ theme }) => theme.font.family.raleway};
+  background-color: ${({ theme }) => theme.bgColor};
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  color: ${({ theme }) => theme.primary};
+  p {
+    font-size: ${({ theme }) => theme.font.size.l};
+    font-weight: 600;
+    cursor: pointer;
+  }
+`
+const StyledMenuButton = styled.div`
+  position: relative;
+  width: 26px;
+  height: 3px;
+  border-bottom: 3px solid ${({ theme }) => theme.primary};
+  cursor: pointer;
+  ::before,
+  ::after {
+    position: absolute;
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 100%;
+    border-bottom: 3px solid ${({ theme }) => theme.primary};
+  }
+  ::before {
+    top: -8px;
+  }
+  ::after {
+    top: 8px;
+  }
+`
+const Header = ({ children }) => (
+  <StyledHeader>
+    <p>WBDev</p>
+    <StyledMenuButton />
+  </StyledHeader>
 )
 
 Header.propTypes = {
