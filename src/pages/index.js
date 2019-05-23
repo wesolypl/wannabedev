@@ -1,13 +1,19 @@
-import React from 'react'
-import { Link } from 'gatsby'
+import React, { Component } from "react";
+import SEO from "components/seo";
+import Layout from "components/layout";
+import Articles from "components/articles/articles";
+import LastestArticle from "components/articles/lastestArticle";
 
-import Layout from 'components/layout'
-import SEO from 'components/seo'
+class IndexPage extends Component {
+  render() {
+    return (
+      <Layout>
+        <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+        <LastestArticle />
+        <Articles />
+      </Layout>
+    );
+  }
+}
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-  </Layout>
-)
-
-export default IndexPage
+export default IndexPage;

@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css?family=Lato:400,700|Raleway:400,600,700&subset=latin-ext');
@@ -11,9 +11,15 @@ const GlobalStyle = createGlobalStyle`
 }
 html{
     font-size: 62.5%;
+
 }
 body{
     font-size:1.6rem;
 }
-`
-export default GlobalStyle
+@media only screen and (max-width:319px){
+    body{
+        display:none;
+    }
+}
+`;
+export default GlobalStyle;

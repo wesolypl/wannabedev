@@ -1,19 +1,15 @@
-import { Link } from 'gatsby'
-import PropTypes from 'prop-types'
-import React from 'react'
-import styled from 'styled-components'
-import Articles from 'components/articles/articles'
-
+import React, { Component } from "react";
+import styled from "styled-components";
 const StyledMain = styled.main`
+  display: flex;
+  flex-direction: column;
   flex-grow: 1;
   width: 100%;
   background-color: ${({ theme }) => theme.bgColor};
-`
+`;
 
-const Main = ({ children }) => (
-  <StyledMain>
-    <Articles />
-  </StyledMain>
-)
+const Main = ({ children }) => {
+  return <StyledMain>{children}</StyledMain>;
+};
 
-export default Main
+export default Main;

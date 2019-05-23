@@ -3,10 +3,10 @@ import React from "react";
 import Layout from "components/layout";
 import SEO from "components/seo";
 
-const NotFoundPage = props => (
+const ContactPage = props => (
   <Layout {...props}>
-    <SEO title="404: Not found" />
+    <SEO title="Kontakt" keywords={[`gatsby`, `application`, `react`]} />
   </Layout>
 );
 
-export default NotFoundPage;
+export default ContactPage;

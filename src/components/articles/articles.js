@@ -1,39 +1,47 @@
-import { StaticQuery, graphql } from 'gatsby'
-import React from 'react'
-import Article from 'components/articles/article'
-import styled from 'styled-components'
+import { StaticQuery, graphql } from "gatsby";
+import React from "react";
+import SingleArticle from "components/articles/singleArticle";
+import styled from "styled-components";
+import { Link } from "gatsby";
 const StyledArticlesList = styled.div`
   display: flex;
   flex-direction: column;
-  width: 100%;
+  flex-grow: 1;
   height: 100%;
   align-items: center;
-`
+`;
+const StyledLink = styled(Link)`
+  text-decoration: none;
+`;
 
-const Posts = () => {
+const Articles = () => {
   return (
     <StaticQuery
       query={graphql`
         query {
-          wbdv2 {
-            articleses {
+          wbd {
+            articles(skip: 1, orderBy: createdAt_DESC) {
               id
+              createdAt
               title
-              content
+              shortcut
               thumbnail
+              slug
             }
           }
         }
       `}
-      render={({ wbdv2: { articleses } }) => (
+      render={({ wbd: { articles } }) => (
         <StyledArticlesList>
-          {articleses.map(article => (
-            <Article {...article} />
+          {articles.map(article => (
+            <StyledLink to={`/${article.slug}`} key={article.id}>
+              <SingleArticle {...article} />
+            </StyledLink>
           ))}
         </StyledArticlesList>
       )}
     />
-  )
-}
+  );
+};
 
-export default Posts
+export default Articles;
