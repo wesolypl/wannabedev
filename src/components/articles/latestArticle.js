@@ -2,7 +2,7 @@ import React from "react";
 import { StaticQuery, graphql } from "gatsby";
 import styled from "styled-components";
 import { Link } from "gatsby";
-const StyledLastestArticle = styled.article`
+const StyledLatestArticle = styled.article`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -15,16 +15,18 @@ const StyledLastestArticle = styled.article`
   font-family: ${({ theme }) => theme.font.family.raleway};
   font-weight: 600;
   padding: 10px;
-
-  h2.title {
-    font-size: ${({ theme }) => theme.font.size.m};
-    margin-top: 10px;
-  }
-  div.last {
-    font-size: ${({ theme }) => theme.font.size.s};
-    display: flex;
-    align-items: center;
-  }
+`;
+const StyledTitle = styled.h2`
+  font-size: ${({ theme }) => theme.font.size.l};
+  margin-top: 10px;
+  text-shadow: 0px 0px 5px #000000;
+`;
+const StyledLatest = styled.div`
+  font-size: ${({ theme }) => theme.font.size.s};
+  font-weight: 700;
+  text-shadow: 0px 0px 5px #000000;
+  display: flex;
+  align-items: center;
 `;
 const StyledTriangle = styled.div`
   width: 0;
@@ -37,7 +39,7 @@ const StyledTriangle = styled.div`
 const StyledLink = styled(Link)`
   text-decoration: none;
 `;
-const LastestArticle = () => {
+const LatestArticle = () => {
   return (
     <StaticQuery
       query={graphql`
@@ -57,13 +59,13 @@ const LastestArticle = () => {
         <div>
           {articles.map(article => (
             <StyledLink to={`/${article.slug}`} key={article.id}>
-              <StyledLastestArticle img={article.thumbnail}>
-                <div className="last">
+              <StyledLatestArticle img={article.thumbnail}>
+                <StyledLatest>
                   <StyledTriangle />
-                  Lastest Post
-                </div>
-                <h2 className="title">{article.title}</h2>
-              </StyledLastestArticle>
+                  Latest Post
+                </StyledLatest>
+                <StyledTitle>{article.title}</StyledTitle>
+              </StyledLatestArticle>
             </StyledLink>
           ))}
         </div>
@@ -72,4 +74,4 @@ const LastestArticle = () => {
   );
 };
 
-export default LastestArticle;
+export default LatestArticle;

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import styled from "styled-components";
 const StyledMain = styled.main`
   display: flex;
@@ -6,6 +6,7 @@ const StyledMain = styled.main`
   flex-grow: 1;
   width: 100%;
   background-color: ${({ theme }) => theme.bgColor};
+  padding-bottom: 20px;
 `;
 
 const Main = ({ children }) => {

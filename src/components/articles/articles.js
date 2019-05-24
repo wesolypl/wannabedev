@@ -9,6 +9,7 @@ const StyledArticlesList = styled.div`
   flex-grow: 1;
   height: 100%;
   align-items: center;
+  padding: 0 10px;
 `;
 const StyledLink = styled(Link)`
   text-decoration: none;
@@ -20,7 +21,7 @@ const Articles = () => {
       query={graphql`
         query {
           wbd {
-            articles(skip: 1, orderBy: createdAt_DESC) {
+            articles(skip: 1, first: 10, orderBy: createdAt_DESC) {
               id
               createdAt
               title
