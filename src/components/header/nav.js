@@ -66,6 +66,7 @@ const Nav = props => {
           <StyledA
             href="https://github.com/wesolypl"
             target="_blank"
+            rel="noreferrer"
             onClick={toggleMenu}
           >
             Github

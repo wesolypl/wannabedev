@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 const StyledMain = styled.main`
+  postion: relative;
   display: flex;
   flex-direction: column;
   flex-grow: 1;

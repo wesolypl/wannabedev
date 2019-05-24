@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import Image from "components/Images/singleArticleImage";
 const StyledArticle = styled.article`
+  position: relative;
   display: grid;
   grid-template-columns: 100px auto;
   grid-template-rows: 1fr;
@@ -22,7 +24,7 @@ const StyledArticle = styled.article`
   ${({ theme }) => theme.media.xl} {
   }
 `;
-const StyledThumbnail = styled.img`
+const StyledThumbnail = styled(Image)`
   object-fit: cover;
   height: 100%;
   width: 100%;
@@ -52,7 +54,7 @@ const Article = props => {
   const { thumbnail, id, title, shortcut } = props;
   return (
     <StyledArticle>
-      <StyledThumbnail src={thumbnail} alt={id} />
+      <Image id={id} />
       <StyledContentBox>
         <StyledTitle>{title}</StyledTitle>
         <StyledShortcut>{shortcut}</StyledShortcut>

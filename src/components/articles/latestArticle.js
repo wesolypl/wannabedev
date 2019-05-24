@@ -2,14 +2,14 @@ import React from "react";
 import { StaticQuery, graphql } from "gatsby";
 import styled from "styled-components";
 import { Link } from "gatsby";
+import Image from "components/images/latestArticleImage";
 const StyledLatestArticle = styled.article`
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   width: 100%;
   height: 200px;
-  background-image: url(${props => props.img});
-  background-size: cover;
   margin-bottom: 20px;
   color: ${({ theme }) => theme.white};
   font-family: ${({ theme }) => theme.font.family.raleway};
@@ -20,6 +20,7 @@ const StyledTitle = styled.h2`
   font-size: ${({ theme }) => theme.font.size.l};
   margin-top: 10px;
   text-shadow: 0px 0px 5px #000000;
+  z-index: 1;
 `;
 const StyledLatest = styled.div`
   font-size: ${({ theme }) => theme.font.size.s};
@@ -27,6 +28,7 @@ const StyledLatest = styled.div`
   text-shadow: 0px 0px 5px #000000;
   display: flex;
   align-items: center;
+  z-index: 1;
 `;
 const StyledTriangle = styled.div`
   width: 0;
@@ -58,8 +60,13 @@ const LatestArticle = () => {
       render={({ wbd: { articles } }) => (
         <div>
           {articles.map(article => (
-            <StyledLink to={`/${article.slug}`} key={article.id}>
-              <StyledLatestArticle img={article.thumbnail}>
+            <StyledLink
+              to={`/${article.slug}`}
+              key={article.id}
+              aria-label={article.title}
+            >
+              <StyledLatestArticle>
+                <Image id={article.id} />
                 <StyledLatest>
                   <StyledTriangle />
                   Latest Post

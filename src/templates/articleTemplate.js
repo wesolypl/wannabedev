@@ -1,6 +1,7 @@
 import React from "react";
 import Layout from "components/layout";
 import styled from "styled-components";
+import SEO from "components/seo";
 import moment from "moment";
 const StyledArticle = styled.article`
   width: 100%;
@@ -31,6 +32,7 @@ const StyledContent = styled.p`
 const ArticleTemplate = ({ pageContext: { data } }) => {
   return (
     <Layout>
+      <SEO title={data.title} keywords={[`gatsby`, `application`, `react`]} />
       <StyledArticle>
         <StyledTitle>
           {data.title}{" "}

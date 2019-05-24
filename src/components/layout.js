@@ -8,6 +8,7 @@ import Footer from "components/footer/footer";
 import Header from "components/header/header";
 import Main from "components/main";
 const StyledLayout = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 100%;

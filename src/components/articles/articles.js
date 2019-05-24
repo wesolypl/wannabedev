@@ -35,7 +35,11 @@ const Articles = () => {
       render={({ wbd: { articles } }) => (
         <StyledArticlesList>
           {articles.map(article => (
-            <StyledLink to={`/${article.slug}`} key={article.id}>
+            <StyledLink
+              to={`/${article.slug}`}
+              key={article.id}
+              aria-label={article.title}
+            >
               <SingleArticle {...article} />
             </StyledLink>
           ))}

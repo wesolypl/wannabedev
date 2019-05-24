@@ -16,6 +16,7 @@ const StyledHeader = styled.header`
   justify-content: space-between;
   padding: 10px;
   color: ${({ theme }) => theme.primary};
+  z-index: 100;
   p {
     font-size: ${({ theme }) => theme.font.size.l};
     font-weight: 600;
@@ -86,16 +87,19 @@ class Header extends Component {
   };
   render() {
     return (
-      <StyledHeader>
-        <StyledLogo to="/">WBDev</StyledLogo>
-        <StyledHamburgerButton
-          onClick={this.toggleMenu}
-          showMenu={this.state.showMenu}
-        >
-          <StyledInnerHamburger showMenu={this.state.showMenu} />
-        </StyledHamburgerButton>
-        <Nav showMenu={this.state.showMenu} toggleMenu={this.toggleMenu} />
-      </StyledHeader>
+      <>
+        <StyledHeader>
+          <StyledLogo to="/">WBDev</StyledLogo>
+          <StyledHamburgerButton
+            onClick={this.toggleMenu}
+            showMenu={this.state.showMenu}
+            aria-label="Menu"
+          >
+            <StyledInnerHamburger showMenu={this.state.showMenu} />
+          </StyledHamburgerButton>
+          <Nav showMenu={this.state.showMenu} toggleMenu={this.toggleMenu} />
+        </StyledHeader>
+      </>
     );
   }
 }
