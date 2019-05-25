@@ -54,12 +54,16 @@ const Nav = props => {
       <ul>
         <li>
           <StyledLink to="/" activeClassName="active" onClick={toggleMenu}>
-            Home
+            Strona Główna
           </StyledLink>
         </li>
         <li>
-          <StyledLink to="/about" activeClassName="active" onClick={toggleMenu}>
-            About
+          <StyledLink
+            to="/about/"
+            activeClassName="active"
+            onClick={toggleMenu}
+          >
+            O Blogu
           </StyledLink>
         </li>
         <li>
@@ -74,11 +78,11 @@ const Nav = props => {
         </li>
         <li>
           <StyledLink
-            to="/contact"
+            to="/contact/"
             activeClassName="active"
             onClick={toggleMenu}
           >
-            Contact
+            Kontakt
           </StyledLink>
         </li>
       </ul>

@@ -61,7 +61,7 @@ const LatestArticle = () => {
         <div>
           {articles.map(article => (
             <StyledLink
-              to={`/${article.slug}`}
+              to={`/${article.slug}/`}
               key={article.id}
               aria-label={article.title}
             >
@@ -69,7 +69,7 @@ const LatestArticle = () => {
                 <Image id={article.id} />
                 <StyledLatest>
                   <StyledTriangle />
-                  Latest Post
+                  Ostatni artykuł
                 </StyledLatest>
                 <StyledTitle>{article.title}</StyledTitle>
               </StyledLatestArticle>

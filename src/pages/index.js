@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { graphql, Link } from "gatsby";
+import { graphql } from "gatsby";
 import SEO from "components/seo";
 import Layout from "components/layout";
 import Articles from "components/articles/articles";
@@ -9,13 +9,12 @@ class IndexPage extends Component {
   render() {
     const { data } = this.props;
     const articles = data.wbd.articles;
-    console.log(data);
     return (
       <Layout>
-        <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+        <SEO title="Główna" keywords={[`gatsby`, `application`, `react`]} />
         <LatestArticle />
         <Articles />
-        {articles.length > 7 ? (
+        {articles.length > 8 ? (
           <Button link="/blog/2" text="Więcej artukułów" />
         ) : (
           ""

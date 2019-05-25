@@ -1,5 +1,6 @@
 import React from "react";
 import { graphql, Link } from "gatsby";
+import SEO from "components/seo";
 import Layout from "components/layout";
 import SingleArticle from "components/articles/singleArticle";
 import styled from "styled-components";
@@ -30,6 +31,10 @@ export default class PaginationList extends React.Component {
     const nextPage = (currentPage + 1).toString();
     return (
       <Layout>
+        <SEO
+          title={`Główna ${currentPage}`}
+          keywords={[`gatsby`, `application`, `react`]}
+        />
         <StyledArticlesList>
           {articles.map(article => (
             <StyledLink
@@ -40,16 +45,15 @@ export default class PaginationList extends React.Component {
               <SingleArticle {...article} />
             </StyledLink>
           ))}
-          {console.log(data)}
         </StyledArticlesList>
         <StyledPaginatnion>
           {currentPage === 2 ? (
             <Button link="/" text="Poprzednia strona" />
           ) : (
-            <Button link={`/blog/${prevPage}`} text="Poprzednia strona" />
+            <Button link={`/blog/${prevPage}/`} text="Poprzednia strona" />
           )}
           {currentPage + 1 <= numPages ? (
-            <Button link={`/blog/${nextPage}`} text="Następna strona" />
+            <Button link={`/blog/${nextPage}/`} text="Następna strona" />
           ) : (
             ""
           )}

@@ -44,7 +44,7 @@ const StyledShortcut = styled.p`
   color: ${({ theme }) => theme.grey};
 `;
 const Article = props => {
-  const { thumbnail, id, title, shortcut } = props;
+  const { id, title, shortcut } = props;
   return (
     <StyledArticle>
       <Image id={id} />

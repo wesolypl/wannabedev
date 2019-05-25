@@ -6,7 +6,9 @@
   "author": "",
   "dependencies": {
     "@svgr/webpack": "^4.2.0",
+    "axios": "^0.18.0",
     "babel-plugin-styled-components": "^1.10.0",
+    "formik": "^1.5.7",
     "gatsby": "^2.4.2",
     "gatsby-image": "^2.0.41",
     "gatsby-plugin-manifest": "^2.1.1",

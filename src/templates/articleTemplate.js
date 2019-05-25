@@ -8,12 +8,6 @@ const StyledArticle = styled.article`
   width: 100%;
   font-family: ${({ theme }) => theme.font.family.lato};
 `;
-const StyledImage = styled.div`
-  width: 100%;
-  height: 200px;
-  background-image: url(${({ src }) => src});
-  background-size: cover;
-`;
 const StyledTitle = styled.h2`
   font-size: ${({ theme }) => theme.font.size.l};
   color: ${({ theme }) => theme.primary};
@@ -24,7 +18,7 @@ const StyledData = styled.span`
   font-size: ${({ theme }) => theme.font.size.xs};
 `;
 const StyledContent = styled.p`
-  padding: 10px 10px;
+  padding: 10px 20px;
   font-size: ${({ theme }) => theme.font.size.m};
   color: ${({ theme }) => theme.primary};
   text-align: justify;
@@ -40,8 +34,7 @@ const ArticleTemplate = ({ pageContext: { data } }) => {
           <StyledData>{moment(data.createdAt).format("DD/MM/YYYY")}</StyledData>
         </StyledTitle>
         <Image id={data.id} />
-        {/* <StyledImage src={data.thumbnail} /> */}
-        <StyledContent>{data.content}</StyledContent>
+        <StyledContent dangerouslySetInnerHTML={{ __html: data.content }} />
       </StyledArticle>
     </Layout>
   );

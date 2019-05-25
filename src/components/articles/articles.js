@@ -21,7 +21,7 @@ const Articles = () => {
       query={graphql`
         query {
           wbd {
-            articles(skip: 1, first: 10, orderBy: createdAt_DESC) {
+            articles(skip: 1, first: 7, orderBy: createdAt_DESC) {
               id
               createdAt
               title
@@ -36,7 +36,7 @@ const Articles = () => {
         <StyledArticlesList>
           {articles.map(article => (
             <StyledLink
-              to={`/${article.slug}`}
+              to={`/${article.slug}/`}
               key={article.id}
               aria-label={article.title}
             >
