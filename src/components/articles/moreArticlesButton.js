@@ -21,10 +21,12 @@ const StyledLink = styled(Link)`
   height: 100%;
 `;
 
-const moreArticlesButton = () => {
+const moreArticlesButton = props => {
+  const link = props.link;
+  const text = props.text;
   return (
     <StyledButton>
-      <StyledLink to="/allArticles">Więcej postów</StyledLink>
+      <StyledLink to={link}>{text}</StyledLink>
     </StyledButton>
   );
 };

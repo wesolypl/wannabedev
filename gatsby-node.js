@@ -31,4 +31,19 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     });
   });
+  const posts = articlesQuery.data.wbd.articles.edges;
+  const postsPerPage = 7;
+  const numPages = Math.ceil(posts.length / postsPerPage);
+  Array.from({ length: numPages }).forEach((_, i) => {
+    createPage({
+      path: i === 0 ? `/blog` : `/blog/${i + 1}`,
+      component: path.resolve("./src/templates/paginationTemplate.js"),
+      context: {
+        limit: postsPerPage,
+        skip: i * postsPerPage,
+        numPages,
+        currentPage: i + 1
+      }
+    });
+  });
 };

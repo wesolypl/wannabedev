@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Image from "components/Images/singleArticleImage";
+import Image from "components/Images/homePageArticleImage";
 const StyledArticle = styled.article`
   position: relative;
   display: grid;
@@ -23,13 +23,6 @@ const StyledArticle = styled.article`
   /* media queries large */
   ${({ theme }) => theme.media.xl} {
   }
-`;
-const StyledThumbnail = styled(Image)`
-  object-fit: cover;
-  height: 100%;
-  width: 100%;
-  grid-area: image;
-  border-radius: 5px;
 `;
 const StyledContentBox = styled.div`
   grid-area: content;

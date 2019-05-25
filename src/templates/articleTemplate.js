@@ -3,6 +3,7 @@ import Layout from "components/layout";
 import styled from "styled-components";
 import SEO from "components/seo";
 import moment from "moment";
+import Image from "components/images/articlePageImage";
 const StyledArticle = styled.article`
   width: 100%;
   font-family: ${({ theme }) => theme.font.family.lato};
@@ -38,7 +39,8 @@ const ArticleTemplate = ({ pageContext: { data } }) => {
           {data.title}{" "}
           <StyledData>{moment(data.createdAt).format("DD/MM/YYYY")}</StyledData>
         </StyledTitle>
-        <StyledImage src={data.thumbnail} />
+        <Image id={data.id} />
+        {/* <StyledImage src={data.thumbnail} /> */}
         <StyledContent>{data.content}</StyledContent>
       </StyledArticle>
     </Layout>
