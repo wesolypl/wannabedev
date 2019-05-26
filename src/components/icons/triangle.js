@@ -1,7 +1,7 @@
-import React from 'react'
-import Icon from 'components/icons/icon'
-import triangle from 'images/triangle.svg'
+import React from "react";
+import Icon from "./icon";
+import triangle from "../../images/triangle.svg";
 
-const Triangle = () => (<Icon src={triangle} />)
+const Triangle = () => <Icon src={triangle} />;
 
-export default Triangle
+export default Triangle;

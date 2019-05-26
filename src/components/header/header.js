@@ -2,7 +2,7 @@ import { Link } from "gatsby";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
 import styled from "styled-components";
-import Nav from "components/header/nav";
+import Nav from "./nav";
 const StyledHeader = styled.header`
   position: sticky;
   top: 0;

@@ -6,20 +6,20 @@ module.exports = {
     author: `@wesolypl`
   },
   plugins: [
-    {
-      resolve: "gatsby-plugin-root-import",
-      options: {
-        src: path.join(__dirname, "src"),
-        pages: path.join(__dirname, "src/pages"),
-        assets: path.join(__dirname, "src/asstes"),
-        templates: path.join(__dirname, "src/templates"),
-        components: path.join(__dirname, "src/components"),
-        images: path.join(__dirname, "src/assets/images"),
-        fonts: path.join(__dirname, "src/assets/fonts"),
-        styles: path.join(__dirname, "src/assets/styles"),
-        utils: path.join(__dirname, "src/utils")
-      }
-    },
+    // {
+    //   resolve: "gatsby-plugin-root-import",
+    //   options: {
+    //     src: path.join(__dirname, "src"),
+    //     pages: path.join(__dirname, "src/pages"),
+    //     assets: path.join(__dirname, "src/asstes"),
+    //     templates: path.join(__dirname, "src/templates"),
+    //     components: path.join(__dirname, "src/components"),
+    //     images: path.join(__dirname, "src/assets/images"),
+    //     fonts: path.join(__dirname, "src/assets/fonts"),
+    //     styles: path.join(__dirname, "src/assets/styles"),
+    //     utils: path.join(__dirname, "src/utils")
+    //   }
+    // },
     {
       resolve: "gatsby-plugin-styled-components",
       options: {

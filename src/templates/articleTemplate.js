@@ -1,9 +1,9 @@
 import React from "react";
-import Layout from "components/layout";
+import Layout from "../components/layout";
 import styled from "styled-components";
-import SEO from "components/seo";
+import SEO from "../components/seo";
 import moment from "moment";
-import Image from "components/images/articlePageImage";
+import Image from "../components/images/articlePageImage";
 const StyledArticle = styled.article`
   width: 100%;
   font-family: ${({ theme }) => theme.font.family.lato};

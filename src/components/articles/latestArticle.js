@@ -2,7 +2,7 @@ import React from "react";
 import { StaticQuery, graphql } from "gatsby";
 import styled from "styled-components";
 import { Link } from "gatsby";
-import Image from "components/images/latestArticleImage";
+import Image from "../images/latestArticleImage";
 const StyledLatestArticle = styled.article`
   position: relative;
   display: flex;

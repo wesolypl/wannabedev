@@ -1,10 +1,10 @@
 import React from "react";
 import { graphql, Link } from "gatsby";
-import SEO from "components/seo";
-import Layout from "components/layout";
-import SingleArticle from "components/articles/singleArticle";
+import SEO from "../components/seo";
+import Layout from "../components/layout";
+import SingleArticle from "../components/articles/singleArticle";
 import styled from "styled-components";
-import Button from "components/articles/moreArticlesButton";
+import Button from "../components/articles/moreArticlesButton";
 const StyledArticlesList = styled.div`
   display: flex;
   flex-direction: column;

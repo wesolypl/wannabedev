@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Image from "components/Images/homePageArticleImage";
+import Image from "../images/homePageArticleImage";
 const StyledArticle = styled.article`
   display: grid;
   grid-template-columns: 100px 1fr;

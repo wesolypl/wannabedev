@@ -1,6 +1,6 @@
 import { StaticQuery, graphql } from "gatsby";
 import React from "react";
-import SingleArticle from "components/articles/singleArticle";
+import SingleArticle from "./singleArticle";
 import styled from "styled-components";
 import { Link } from "gatsby";
 const StyledArticlesList = styled.div`

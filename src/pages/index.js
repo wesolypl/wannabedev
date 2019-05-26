@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { graphql } from "gatsby";
-import SEO from "components/seo";
-import Layout from "components/layout";
-import Articles from "components/articles/articles";
-import LatestArticle from "components/articles/latestArticle";
-import Button from "components/articles/moreArticlesButton";
+import SEO from "../components/seo";
+import Layout from "../components/layout";
+import Articles from "../components/articles/articles";
+import LatestArticle from "../components/articles/latestArticle";
+import Button from "../components/articles/moreArticlesButton";
 class IndexPage extends Component {
   render() {
     const { data } = this.props;
