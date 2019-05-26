@@ -8,8 +8,18 @@ const StyledArticlesList = styled.div`
   flex-direction: column;
   flex-grow: 1;
   height: 100%;
-  align-items: center;
   padding: 0 10px;
+  @media only screen and (min-width: ${({ theme }) => theme.media.s}) {
+    & {
+      width: 540px;
+      align-self: center;
+    }
+  }
+  @media only screen and (min-width: ${({ theme }) => theme.media.m}) {
+    & {
+      width: 720px;
+    }
+  }
 `;
 const StyledLink = styled(Link)`
   text-decoration: none;

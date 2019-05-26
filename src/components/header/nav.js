@@ -25,6 +25,23 @@ const StyledNav = styled.nav`
       margin-bottom: 35px;
     }
   }
+  @media only screen and (min-width: ${({ theme }) => theme.media.l}) {
+    & {
+      transform: translateX(0%);
+      position: relative;
+      width: 100%;
+      height: 100%;
+      ul {
+        justify-content: space-around;
+        li {
+          margin: 0;
+          writing-mode: vertical-lr;
+          text-orientation: mixed;
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
 `;
 const StyledLink = styled(Link)`
   text-decoration: none;
@@ -35,6 +52,21 @@ const StyledLink = styled(Link)`
     font-weight: 700;
     color: ${({ theme }) => theme.primary};
   }
+  @media only screen and (min-width: ${({ theme }) => theme.media.m}) {
+    font-size: ${({ theme }) => theme.font.size.xxl};
+  }
+  @media only screen and (min-width: ${({ theme }) => theme.media.l}) {
+    font-size: ${({ theme }) => theme.font.size.m};
+    &.active::after {
+      position: absolute;
+      top: 0;
+      left: -4px;
+      content: "";
+      width: 2px;
+      height: 100%;
+      background-color: ${({ theme }) => theme.primary};
+    }
+  }
 `;
 const StyledA = styled.a`
   text-decoration: none;
@@ -44,6 +76,12 @@ const StyledA = styled.a`
   &.active {
     font-weight: 700;
     color: black;
+  }
+  @media only screen and (min-width: ${({ theme }) => theme.media.m}) {
+    font-size: ${({ theme }) => theme.font.size.xxl};
+  }
+  @media only screen and (min-width: ${({ theme }) => theme.media.l}) {
+    font-size: ${({ theme }) => theme.font.size.m};
   }
 `;
 

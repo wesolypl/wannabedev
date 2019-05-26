@@ -15,7 +15,7 @@ export const theme = {
       m: "1.6rem",
       l: "2.4rem",
       xl: "3.0rem",
-      xxl: "3.6"
+      xxl: "3.6rem"
     },
     family: {
       lato: '"Lato", sans-serif',
@@ -23,10 +23,10 @@ export const theme = {
     }
   },
   media: {
-    xs: "@media only screen and (max-width:575px)",
-    s: "@media only screen and (min-width:576px)",
-    m: "@media only screen and (min-width:768px)",
-    l: "@media only screen and (min-width:992px)",
-    xl: "@media only screen and (min-width:1200px)"
+    xs: "575px",
+    s: "576px",
+    m: "768px",
+    l: "992px",
+    xl: "1200px"
   }
 };

@@ -7,6 +7,25 @@ const StyledAboutWrapper = styled.div`
   align-items: center;
   width: 100%;
   padding: 10px;
+  @media only screen and (min-width: ${({ theme }) => theme.media.s}) {
+    & {
+      width: 540px;
+      align-self: center;
+    }
+  }
+  @media only screen and (min-width: ${({ theme }) => theme.media.m}) {
+    & {
+      width: 720px;
+    }
+  }
+  @media only screen and (min-width: ${({ theme }) => theme.media.l}) {
+    & {
+      width: calc(100% - 150px);
+      align-self: flex-start;
+      transform: translateX(150px);
+      padding-top: 20px;
+    }
+  }
 `;
 const StyledHeroImage = styled.div`
   position: relative;
@@ -17,12 +36,23 @@ const StyledHeroImage = styled.div`
   background-color: ${({ theme }) => theme.grey};
   box-sizing: border-box;
   margin-bottom: 10px;
+  @media only screen and (min-width: ${({ theme }) => theme.media.m}) {
+    & {
+      width: 180px;
+      height: 180px;
+    }
+  }
 `;
 const StyledTitle = styled.h2`
   font-family: ${({ theme }) => theme.font.family.lato};
   font-size: ${({ theme }) => theme.font.size.l};
   color: ${({ theme }) => theme.primary};
   margin-bottom: 10px;
+  @media only screen and (min-width: ${({ theme }) => theme.media.m}) {
+    & {
+      font-size: 2.8rem;
+    }
+  }
 `;
 const StyledDescription = styled.p`
   font-family: ${({ theme }) => theme.font.family.lato};
@@ -32,6 +62,17 @@ const StyledDescription = styled.p`
   width: 100%;
   padding: 0 10px;
   text-align: justify;
+  @media only screen and (min-width: ${({ theme }) => theme.media.m}) {
+    & {
+      font-size: 2rem;
+    }
+  }
+  @media only screen and (min-width: ${({ theme }) => theme.media.l}) {
+    & {
+      padding: 0 20px;
+      max-width: 960px;
+    }
+  }
 `;
 const About = () => {
   return (

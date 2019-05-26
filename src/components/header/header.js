@@ -17,10 +17,19 @@ const StyledHeader = styled.header`
   padding: 10px;
   color: ${({ theme }) => theme.primary};
   z-index: 100;
-  p {
-    font-size: ${({ theme }) => theme.font.size.l};
-    font-weight: 600;
-    cursor: pointer;
+  @media only screen and (min-width: ${({ theme }) => theme.media.m}) {
+    & {
+      height: 50px;
+    }
+  }
+  @media only screen and (min-width: ${({ theme }) => theme.media.l}) {
+    & {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 150px;
+      height: 400px;
+    }
   }
 `;
 const StyledHamburgerButton = styled.button`
@@ -32,6 +41,17 @@ const StyledHamburgerButton = styled.button`
   background: none;
   cursor: pointer;
   outline: none;
+  @media only screen and (min-width: ${({ theme }) => theme.media.m}) {
+    & {
+      width: 36px;
+      height: 36px;
+    }
+  }
+  @media only screen and (min-width: ${({ theme }) => theme.media.l}) {
+    & {
+      display: none;
+    }
+  }
 `;
 const StyledInnerHamburger = styled.div`
   z-index: 100;
@@ -65,6 +85,22 @@ const StyledInnerHamburger = styled.div`
     transform: translateY(8px)
       rotate(${showMenu => (showMenu.showMenu ? "-45deg" : "0deg")});
   }
+  @media only screen and (min-width: ${({ theme }) => theme.media.m}) {
+    & {
+      width: 36px;
+      ::before {
+        transform: translateY(-10px)
+          rotate(${showMenu => (showMenu.showMenu ? "45deg" : "0deg")})
+          translate(
+            ${showMenu => (showMenu.showMenu ? "-3px, -3px" : "0px, 0px")}
+          );
+      }
+      ::after {
+        transform: translateY(10px)
+          rotate(${showMenu => (showMenu.showMenu ? "-45deg" : "0deg")});
+      }
+    }
+  }
 `;
 const StyledLogo = styled(Link)`
   font-size: ${({ theme }) => theme.font.size.l};
@@ -72,6 +108,14 @@ const StyledLogo = styled(Link)`
   cursor: pointer;
   text-decoration: none;
   color: ${({ theme }) => theme.primary};
+  @media only screen and (min-width: ${({ theme }) => theme.media.m}) {
+    font-size: ${({ theme }) => theme.font.size.xl};
+  }
+  @media only screen and (min-width: ${({ theme }) => theme.media.l}) {
+    & {
+      display: none;
+    }
+  }
 `;
 class Header extends Component {
   constructor(props) {

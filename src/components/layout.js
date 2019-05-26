@@ -8,11 +8,19 @@ import Footer from "components/footer/footer";
 import Header from "components/header/header";
 import Main from "components/main";
 const StyledLayout = styled.div`
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
   flex-direction: column;
   width: 100%;
   min-height: 100vh;
+  @media only screen and (min-width: ${({ theme }) => theme.media.l}) {
+    & {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
 `;
 const Layout = ({ children }) => {
   return (

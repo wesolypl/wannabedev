@@ -9,6 +9,7 @@ const StyledButton = styled.button`
   align-self: center;
   background: none;
   padding: 4px 20px;
+  margin-bottom: 20px;
 `;
 const StyledLink = styled(Link)`
   text-decoration: none;

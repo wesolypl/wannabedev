@@ -45,6 +45,18 @@ const StyledFooter = styled.footer`
     background-color: ${({ theme }) => theme.primary};
     line-height: 24px;
   }
+  @media only screen and (min-width: ${({ theme }) => theme.media.s}) {
+    div {
+      width: 540px;
+      align-self: center;
+    }
+  }
+  @media only screen and (min-width: ${({ theme }) => theme.media.m}) {
+    div {
+      width: 720px;
+      align-self: center;
+    }
+  }
 `;
 const Footer = data => (
   <StyledFooter>

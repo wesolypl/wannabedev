@@ -15,12 +15,41 @@ const StyledLatestArticle = styled.article`
   font-family: ${({ theme }) => theme.font.family.raleway};
   font-weight: 600;
   padding: 10px;
+  @media only screen and (min-width: ${({ theme }) => theme.media.m}) {
+    & {
+      height: 250px;
+    }
+  }
+  @media only screen and (min-width: ${({ theme }) => theme.media.l}) {
+    & {
+      width: 100%;
+      height: 400px;
+    }
+  }
 `;
 const StyledTitle = styled.h2`
   font-size: ${({ theme }) => theme.font.size.l};
   margin-top: 10px;
   text-shadow: 0px 0px 5px #000000;
   z-index: 1;
+  @media only screen and (min-width: ${({ theme }) => theme.media.s}) {
+    & {
+      width: 540px;
+      align-self: center;
+    }
+  }
+  @media only screen and (min-width: ${({ theme }) => theme.media.m}) {
+    & {
+      width: 720px;
+      font-size: ${({ theme }) => theme.font.size.xl};
+    }
+  }
+  @media only screen and (min-width: ${({ theme }) => theme.media.l}) {
+    & {
+      transform: translateX(150px);
+      align-self: flex-start;
+    }
+  }
 `;
 const StyledLatest = styled.div`
   font-size: ${({ theme }) => theme.font.size.s};
@@ -29,6 +58,24 @@ const StyledLatest = styled.div`
   display: flex;
   align-items: center;
   z-index: 1;
+  @media only screen and (min-width: ${({ theme }) => theme.media.s}) {
+    & {
+      width: 540px;
+      align-self: center;
+    }
+  }
+  @media only screen and (min-width: ${({ theme }) => theme.media.m}) {
+    & {
+      width: 720px;
+      font-size: ${({ theme }) => theme.font.size.m};
+    }
+  }
+  @media only screen and (min-width: ${({ theme }) => theme.media.l}) {
+    & {
+      transform: translateX(150px);
+      align-self: flex-start;
+    }
+  }
 `;
 const StyledTriangle = styled.div`
   width: 0;
@@ -37,9 +84,24 @@ const StyledTriangle = styled.div`
   border-bottom: 10px solid transparent;
   border-left: 10px solid ${({ theme }) => theme.red};
   margin-right: 5px;
+  @media only screen and (min-width: ${({ theme }) => theme.media.m}) {
+    & {
+      border-top: 12px solid transparent;
+      border-bottom: 12px solid transparent;
+      border-left: 12px solid ${({ theme }) => theme.red};
+      margin-right: 10px;
+    }
+  }
 `;
 const StyledLink = styled(Link)`
   text-decoration: none;
+  @media only screen and (min-width: ${({ theme }) => theme.media.l}) {
+    & {
+      /* width: calc(100% - 150px); */
+      flex-basis: calc(100% - 150px);
+      height: 400px;
+    }
+  }
 `;
 const LatestArticle = () => {
   return (
@@ -58,7 +120,7 @@ const LatestArticle = () => {
         }
       `}
       render={({ wbd: { articles } }) => (
-        <div>
+        <>
           {articles.map(article => (
             <StyledLink
               to={`/${article.slug}/`}
@@ -75,7 +137,7 @@ const LatestArticle = () => {
               </StyledLatestArticle>
             </StyledLink>
           ))}
-        </div>
+        </>
       )}
     />
   );
