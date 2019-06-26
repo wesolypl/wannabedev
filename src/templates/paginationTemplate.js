@@ -5,12 +5,15 @@ import Layout from "../components/layout";
 import SingleArticle from "../components/articles/singleArticle";
 import styled from "styled-components";
 import Button from "../components/articles/moreArticlesButton";
+import { appearBottom } from "../components/animations/appear";
+
 const StyledArticlesList = styled.div`
   display: flex;
   flex-direction: column;
   flex-grow: 1;
   width: 100%;
-  padding: 0 10px;
+  padding: 20px 10px;
+  animation: ${appearBottom} 2s both;
   @media only screen and (min-width: ${({ theme }) => theme.media.s}) {
     & {
       width: 540px;
@@ -20,16 +23,32 @@ const StyledArticlesList = styled.div`
   @media only screen and (min-width: ${({ theme }) => theme.media.m}) {
     & {
       width: 720px;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
     }
   }
   @media only screen and (min-width: ${({ theme }) => theme.media.l}) {
     & {
-      padding-top: 20px;
+      width: 960px;
     }
   }
 `;
 const StyledLink = styled(Link)`
   text-decoration: none;
+  @media only screen and (min-width: ${({ theme }) => theme.media.m}) {
+    width: 49%;
+    height: 320px;
+    border-bottom: 1px solid ${({ theme }) => theme.greyFooter};
+    margin-bottom: 10px;
+    &:nth-child(2n) {
+      margin-top: 10px;
+    }
+  }
+  @media only screen and (min-width: ${({ theme }) => theme.media.l}) {
+    height: 420px;
+    border-bottom: 2px solid ${({ theme }) => theme.greyFooter};
+  }
 `;
 const StyledPaginatnion = styled.div`
   width: 100%;

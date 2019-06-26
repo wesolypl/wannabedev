@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { appearBottom } from "../animations/appear";
 
 const StyledFooter = styled.footer`
   width: 100%;
@@ -10,6 +11,7 @@ const StyledFooter = styled.footer`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  animation: ${appearBottom} 1s both;
   div {
     font-family: ${({ theme }) => theme.font.family.lato};
     font-size: 1.2rem;

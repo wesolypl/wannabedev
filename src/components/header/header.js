@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import React, { Component } from "react";
 import styled from "styled-components";
 import Nav from "./nav";
+import { appearLeft } from "../animations/appear";
 const StyledHeader = styled.header`
   position: sticky;
   top: 0;
@@ -17,6 +18,7 @@ const StyledHeader = styled.header`
   padding: 10px;
   color: ${({ theme }) => theme.primary};
   z-index: 100;
+
   @media only screen and (min-width: ${({ theme }) => theme.media.m}) {
     & {
       height: 50px;
@@ -29,6 +31,7 @@ const StyledHeader = styled.header`
       right: 0;
       width: 150px;
       height: 400px;
+      animation: ${appearLeft} 1s both;
     }
   }
 `;

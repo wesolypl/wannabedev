@@ -4,6 +4,12 @@ import styled from "styled-components";
 import SEO from "../components/seo";
 import moment from "moment";
 import Image from "../components/images/articlePageImage";
+import {
+  appear,
+  appearTop,
+  appearRight,
+  appearBottom
+} from "../components/animations/appear";
 const StyledArticle = styled.article`
   width: 100%;
   font-family: ${({ theme }) => theme.font.family.lato};
@@ -23,6 +29,7 @@ const StyledTitle = styled.h2`
   font-size: ${({ theme }) => theme.font.size.l};
   color: ${({ theme }) => theme.primary};
   padding: 0 10px 10px 10px;
+  animation: ${appearTop} 1s both;
   @media only screen and (min-width: ${({ theme }) => theme.media.m}) {
     & {
       font-size: 2.8rem;
@@ -44,6 +51,7 @@ const StyledContent = styled.p`
   font-size: ${({ theme }) => theme.font.size.m};
   color: ${({ theme }) => theme.primary};
   text-align: justify;
+  animation: ${appear} 1s 1s both;
   @media only screen and (min-width: ${({ theme }) => theme.media.s}) {
     & {
       width: 540px;
@@ -63,7 +71,6 @@ const StyledContent = styled.p`
     }
   }
 `;
-
 const ArticleTemplate = ({ pageContext: { data } }) => {
   return (
     <Layout>

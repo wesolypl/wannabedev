@@ -15,6 +15,7 @@ html{
 }
 body{
     font-size:1.6rem;
+    background-color:"#F9F9F9";
 }
 @media only screen and (max-width:319px){
     body{

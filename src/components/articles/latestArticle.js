@@ -3,6 +3,7 @@ import { StaticQuery, graphql } from "gatsby";
 import styled from "styled-components";
 import { Link } from "gatsby";
 import Image from "../images/latestArticleImage";
+import { appearTop } from "../animations/appear";
 const StyledLatestArticle = styled.article`
   position: relative;
   display: flex;
@@ -15,6 +16,7 @@ const StyledLatestArticle = styled.article`
   font-family: ${({ theme }) => theme.font.family.raleway};
   font-weight: 600;
   padding: 10px;
+  animation: ${appearTop} 1s both;
   @media only screen and (min-width: ${({ theme }) => theme.media.m}) {
     & {
       height: 250px;

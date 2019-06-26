@@ -12,10 +12,15 @@ const StyledArticle = styled.article`
   margin-bottom: 20px;
   /* media queries small */
   @media only screen and (min-width: ${({ theme }) => theme.media.m}) {
-    & {
-      height: 130px;
-      grid-template-columns: 130px 1fr;
-    }
+    height: 130px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 200px 100px;
+    grid-template-areas: "image" "content";
+    grid-column-gap: 0px;
+    grid-row-gap: 10px;
+  }
+  @media only screen and (min-width: ${({ theme }) => theme.media.l}) {
+    grid-template-rows: 300px 100px;
   }
 `;
 const StyledContentBox = styled.div`

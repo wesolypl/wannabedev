@@ -67,6 +67,13 @@ module.exports = {
         url:
           "https://api-euwest.graphcms.com/v1/cjv9muxkh0oev01ghjlldezsl/master"
       }
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        // replace "UA-XXXXXXXXX-X" with your own Tracking ID
+        trackingId: "UA-63982404-4"
+      }
     }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

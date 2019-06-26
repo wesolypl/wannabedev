@@ -57,6 +57,7 @@ const StyledLink = styled(Link)`
   }
   @media only screen and (min-width: ${({ theme }) => theme.media.l}) {
     font-size: ${({ theme }) => theme.font.size.m};
+    transition: color 0.3s ease-in-out;
     &.active::after {
       position: absolute;
       top: 0;
@@ -65,6 +66,9 @@ const StyledLink = styled(Link)`
       width: 2px;
       height: 100%;
       background-color: ${({ theme }) => theme.primary};
+    }
+    &:hover {
+      color: ${({ theme }) => theme.primary};
     }
   }
 `;
@@ -82,6 +86,10 @@ const StyledA = styled.a`
   }
   @media only screen and (min-width: ${({ theme }) => theme.media.l}) {
     font-size: ${({ theme }) => theme.font.size.m};
+    transition: color 0.3s ease-in-out;
+    &:hover {
+      color: ${({ theme }) => theme.primary};
+    }
   }
 `;
 

@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Formik } from "formik";
 import axios from "axios";
+import { appear } from "../animations/appear";
 const StyledTitle = styled.h2`
   font-family: ${({ theme }) => theme.font.family.lato};
   font-size: ${({ theme }) => theme.font.size.l};
@@ -32,6 +33,7 @@ const StyledContactWrapper = styled.div`
   width: 100%;
   padding: 10px;
   flex-grow: 1;
+  animation: ${appear} 1.5s both;
   @media only screen and (min-width: ${({ theme }) => theme.media.s}) {
     & {
       width: 540px;

@@ -10,6 +10,14 @@ const StyledButton = styled.button`
   background: none;
   padding: 4px 20px;
   margin-bottom: 20px;
+  transition: background-color 0.25s ease-in-out;
+  @media only screen and (min-width: ${({ theme }) => theme.media.l}) {
+    width: 160px;
+    height: 70px;
+    &:hover {
+      background-color: ${({ theme }) => theme.blue};
+    }
+  }
 `;
 const StyledLink = styled(Link)`
   text-decoration: none;
@@ -20,6 +28,12 @@ const StyledLink = styled(Link)`
   color: ${({ theme }) => theme.blue};
   width: 100%;
   height: 100%;
+  transition: color 0.25s ease-in-out;
+  @media only screen and (min-width: ${({ theme }) => theme.media.l}) {
+    ${StyledButton}:hover & {
+      color: #fff;
+    }
+  }
 `;
 
 const moreArticlesButton = props => {

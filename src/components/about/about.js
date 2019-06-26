@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { appear } from "../animations/appear";
 const StyledAboutWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -7,6 +8,7 @@ const StyledAboutWrapper = styled.div`
   align-items: center;
   width: 100%;
   padding: 10px;
+  animation: ${appear} 1.5s both;
   @media only screen and (min-width: ${({ theme }) => theme.media.s}) {
     & {
       width: 540px;
